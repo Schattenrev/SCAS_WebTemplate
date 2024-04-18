@@ -8,7 +8,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block vh-100 sidebar collapse Dashboard_Menu">
+            <%--<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block vh-100 sidebar collapse Dashboard_Menu">
                 <div class="h-100 d-flex flex-column justify-content-center">
                     <h5 class="fs-4 text-center">Dashboard</h5>
                     <ul class="nav nav-pills flex-column mb-auto mt-2">
@@ -38,7 +38,19 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
+            </nav>--%>
+            <div class="col-md-3 col-lg-2 border-right">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-dark">Dashboard</span>
+                </h4>
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</a>
+                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sales</a>
+                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Products</a>
+                    <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Customers</a>
+                </div>
+            </div>
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
