@@ -1,6 +1,4 @@
-﻿
-    /* Add custom styles here */
-    body.dark-mode {
+﻿ body.dark-mode {
         background-color: #333;
         color: #fff;
     }
@@ -10,11 +8,6 @@
     color: #fff;
 }
 
-/*.navbar-dark .navbar-brand,
-.navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-}
-*/
 #pageHeader .navbar .navbar-nav .nav-link {
     color: #fff;
 }
