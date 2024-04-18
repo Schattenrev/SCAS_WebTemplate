@@ -213,7 +213,7 @@
         const body = document.body;
         const header = document.getElementById('pageHeader');
         const jumbotron = document.getElementById('jumbotron');
-        const dashboard_sm = document.getElementById('sidebarMenu');
+        const dashboard_sm = document.getElementById('Dashboard_Menu');
 
         function toggleDarkMode() {
             if (darkModeSwitch.checked) {
@@ -221,7 +221,7 @@
                 header.classList.remove('navbar-light');
                 header.classList.add('navbar-dark', 'bg-dark');
                 dashboard_sm.classList.remove('bg-light');
-                dashboard_sm.classList.add('dark-mode');
+                dashboard_sm.classList.add('text-light');
                 localStorage.setItem('darkMode', 'true');
             } else {
                 body.classList.remove('dark-mode');

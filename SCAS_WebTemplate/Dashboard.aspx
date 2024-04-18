@@ -39,9 +39,9 @@
                     </ul>
                 </div>
             </nav>--%>
-            <div class="col-md-3 col-lg-2 border-right">
+            <div class="col-md-3 col-lg-2 border-right" id="Dashboard_Menu">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-dark">Dashboard</span>
+                    <span class="">Dashboard</span>
                 </h4>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</a>
@@ -54,7 +54,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
+                    <h1 class="h2">Overview</h1>
                     <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with outline buttons">
                         <div class="btn-group me-2">
                             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -108,23 +108,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6" style="width: 400px; height: 200px;">
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
                                 Pie Chart (Distribution)
                             </div>
                             <div class="card-body">
-                                <canvas id="anotherChart"></canvas>
+                                <canvas id="anotherChart" width="400" height="200"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6" style="width: 400px; height: 200px;">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
                                 Bar Chart Distribution
                             </div>
                             <div class="card-body">
-                                <canvas id="newBarChart"></canvas>
+                                <canvas id="newBarChart" width="400" height="200"></canvas>
                             </div>
                         </div>
                     </div>
