@@ -8,9 +8,10 @@
     </title>
     <script src="Scripts/bootstrap.bundle.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    <%--<link href="Styles/Style.css" rel="stylesheet" />--%>
+    <link href="Styles/Style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -75,7 +76,7 @@
             border-radius: 10px;
         }
 
-        .card {
+        /*.card {
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
@@ -97,7 +98,7 @@
         .card-body {
             position: absolute;
             z-index: 3;
-        }
+        }*/
 
         .headlines a {
             text-decoration: none;
@@ -212,28 +213,32 @@
         const body = document.body;
         const header = document.getElementById('pageHeader');
         const jumbotron = document.getElementById('jumbotron');
+        const dashboard_sm = document.getElementById('sidebarMenu');
 
         function toggleDarkMode() {
             if (darkModeSwitch.checked) {
                 body.classList.add('dark-mode');
                 header.classList.remove('navbar-light');
                 header.classList.add('navbar-dark', 'bg-dark');
+                dashboard_sm.classList.remove('bg-light');
+                dashboard_sm.classList.add('dark-mode');
                 localStorage.setItem('darkMode', 'true');
             } else {
                 body.classList.remove('dark-mode');
                 header.classList.remove('navbar-dark', 'bg-dark');
                 header.classList.add('navbar-light', 'header-primarycolor');
+                dashboard_sm.classList.remove('dark-mode');
                 localStorage.setItem('darkMode', 'false');
             }
         }
 
-        window.onload = function () {
-            var darkModePref = localStorage.getItem('darkMode');
-            if (darkModePref === 'true') {
-                darkModeSwitch.checked = true;
-                toggleDarkMode();
-            }
-        };
+        //window.onload = function () {
+        //    var darkModePref = localStorage.getItem('darkMode');
+        //    if (darkModePref === 'true') {
+        //        darkModeSwitch.checked = true;
+        //        toggleDarkMode();
+        //    }
+        //};
 
         darkModeSwitch.addEventListener('change', toggleDarkMode);
     </script>

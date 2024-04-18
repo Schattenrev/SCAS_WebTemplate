@@ -59,7 +59,7 @@
     border-radius: 10px;
 }
 
-.card {
+/*.card {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -81,7 +81,7 @@
 .card-body {
     position: absolute;
     z-index: 3;
-}
+}*/
 
 .headlines a {
     text-decoration: none;
@@ -142,4 +142,10 @@
 
 .header-primarycolor {
     background-color: #3dcd58;
+}
+
+/*------------*/
+
+.Dashboard_Menu {
+    background-color: #9ff71b;
 }
