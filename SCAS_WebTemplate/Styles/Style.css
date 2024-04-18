@@ -141,3 +141,7 @@
 
 #Dashboard_Menu {
 }
+
+#v-right-pills .nav-link.active {
+    background-color: green;
+}

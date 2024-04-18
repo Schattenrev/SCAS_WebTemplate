@@ -37,11 +37,11 @@
                     </ul>
                 </div>
             </nav>--%>
-            <div class="col-md-3 col-lg-2 border-right" id="Dashboard_Menu">
+            <div class="col-md-3 col-lg-2 border border-gray-300 border-start-0 border-top-0 border-bottom-0" id="Dashboard_Menu">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="mt-4">Dashboard</span>
                 </h4>
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <div class="nav flex-column nav-pills" id="v-right-pills" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</a>
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sales</a>
                     <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Products</a>
