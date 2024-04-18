@@ -4,8 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <div class="container-fluid">
         <div class="row">
             <%--<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block vh-100 sidebar collapse Dashboard_Menu">
@@ -41,7 +39,7 @@
             </nav>--%>
             <div class="col-md-3 col-lg-2 border-right" id="Dashboard_Menu">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="">Dashboard</span>
+                    <span class="mt-4">Dashboard</span>
                 </h4>
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</a>
@@ -135,7 +133,6 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         // Hypothetical chart data for salesChart 
         var salesData = {
