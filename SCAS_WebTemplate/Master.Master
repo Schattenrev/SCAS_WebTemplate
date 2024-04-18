@@ -157,6 +157,10 @@
             background-color: green;
         }
 
+        .same-size {
+            width: 100%;
+            height: 200px;
+        }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

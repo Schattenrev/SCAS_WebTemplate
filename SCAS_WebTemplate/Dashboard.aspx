@@ -111,20 +111,20 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                Pie Chart (Distribution)
+                                Bar Chart
                             </div>
                             <div class="card-body">
-                                <canvas id="anotherChart" width="400" height="200"></canvas>
+                                <canvas id="barChart" class="chart-canvas"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                Bar Chart Distribution
+                                Pie Chart
                             </div>
                             <div class="card-body">
-                                <canvas id="newBarChart" width="400" height="200"></canvas>
+                                <canvas id="pieChart" class="chart-canvas"></canvas>
                             </div>
                         </div>
                     </div>
@@ -204,4 +204,58 @@
             }
         });
     </script>
+
+    <script>
+        // Bar chart
+        const barChartCanvas = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(barChartCanvas, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5, 2, 3, 7, 8, 9, 10, 11, 12],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Pie chart
+        const pieChartCanvas = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(pieChartCanvas, {
+            type: 'pie',
+            data: {
+                labels: ['Desktop', 'Tablet', 'Mobile'],
+                datasets: [{
+                    label: 'Devices',
+                    data: [300, 50, 100],
+                    backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            padding: 25,
+                            boxWidth: 20
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
 </asp:Content>

@@ -145,3 +145,8 @@
 #v-right-pills .nav-link.active {
     background-color: green;
 }
+
+.same-size {
+    width: 100%;
+    height: 200px;
+}
