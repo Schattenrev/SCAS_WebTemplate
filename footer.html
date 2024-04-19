@@ -186,3 +186,51 @@ updateTime();
   // Call the function initially
   updateDateTime();
 </script>
+
+<footer class="bg-dark text-white fixed-bottom">
+    <div class="container text-center">
+        <!-- Your existing footer content -->
+        <div class="row">
+            <div class="col-12">
+                <p class="fw-lighter mb-1 mt-1">Sample WebTemplate © 2024 - Lorem Ipsum | Philippines</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <hr class="bg-white my-2" />
+            </div>
+        </div>
+        <div>
+            <span class="fw-lighter">Follow us on:</span>
+        </div>
+        <div class="d-flex justify-content-center fw-lighter align-self-center">
+            <!-- Links -->
+        </div>
+        <div class="row">
+            <span class="fw-lighter SCASLink" id="">All Web Application and Tableau Report created by the SCAS Team – <a href="https://wsecpwrprd21598.gad.schneider-electric.com/LP.Content.aspx#Home" class="text-light">SCAS Landing Page</a>
+            </span>
+        </div>
+        
+        <!-- New div for dynamic time, date, and time zone -->
+        <div id="dynamicFooterInfo" class="fw-lighter"></div>
+    </div>
+</footer>
+
+<script>
+function updateTime() {
+  var now = new Date();
+  var dynamicFooterInfo = document.getElementById('dynamicFooterInfo');
+  
+  var timeString = now.toLocaleTimeString();
+  var dateString = now.toDateString();
+  var timezoneString = now.toString().match(/\(([A-Za-z\s].*)\)/)[1];
+  
+  dynamicFooterInfo.innerHTML = "Time: " + timeString + " | Date: " + dateString + " | Time Zone: " + timezoneString;
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
+
+// Initial call to display time when the page loads
+updateTime();
+</script>
