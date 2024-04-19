@@ -1,380 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Left Side Tab Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Adjust styles as needed */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 48px 0;
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+    }
+    .nav-link {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 col-lg-2 border border-gray-300 border-start-0 border-top-0 border-bottom-0" id="Dashboard_Menu">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="mt-4">Dashboard</span>
-            </h4>
-            <div class="nav flex-column nav-pills" id="v-right-pills" role="tablist" aria-orientation="vertical">
-                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Overview</a>
-                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Sales</a>
-                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Products</a>
-                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Customers</a>
-            </div>
-        </div>
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main-content">
-            <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Overview</h1>
-                <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with outline buttons">
-                    <div class="btn-group me-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
-                </div>
-            </div>
-            <div id="content-container">
-                <div id="v-pills-home" class="tab-pane fade show active">
-                    <!-- Overview content here -->
-                </div>
-                <div id="v-pills-profile" class="tab-pane fade">
-                    <!-- Sales content here -->
-                </div>
-                <div id="v-pills-messages" class="tab-pane fade">
-                    <!-- Products content here -->
-                </div>
-                <div id="v-pills-settings" class="tab-pane fade">
-                    <!-- Customers content here -->
-                </div>
-            </div>
-        </main>
-    </div>
-</div>
-
-// Get the nav-pills element and its links
-const navPills = document.querySelector('#v-right-pills');
-const navLinks = navPills.querySelectorAll('a');
-
-// Get the main content element and its content containers
-const mainContent = document.querySelector('#main-content');
-const contentContainers = mainContent.querySelectorAll('.tab-pane');
-
-// Add a click event listener to each nav link
-navLinks.forEach((link, index) => {
-  link.addEventListener('click', () => {
-    // Remove the 'active' class fromall nav links
-    navLinks.forEach(link => link.classList.remove('active'));
-
-    // Add the 'active' class to the clicked nav link
-    link.classList.add('active');
-
-    // Hide all content containers
-    contentContainers.forEach(container => container.style.display = 'none');
-
-    // Show the content container corresponding to the clicked nav link
-    contentContainers[index].style.display = 'block';
-  });
-});
-
-<div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Link 1
-        </button>
-      </h5>
-    </div>
-
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-        Content 1
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Tab 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tab 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tab 3</a>
+          </li>
+          <!-- Add more tabs as needed -->
+        </ul>
       </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Link 2
-        </button>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        Content 2
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Link 3
-        </button>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-        Content 3
-      </div>
-    </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <!-- Your content goes here -->
+      <h2>Main Content Area</h2>
+      <p>This is where your main content will appear.</p>
+    </main>
   </div>
 </div>
 
-<div class="d-flex flex-column vh-100 bg-light">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ms-auto">
-          <button class="navbar-toggler-icon" type="button" data-bs-toggle="collapse" data-bs-target="#accordion" aria-expanded="false" aria-controls="accordion"></button>
-          <div id="accordion">
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Link 1
-                  </button>
-                </h5>
-              </div>
-
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  Content 1
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Link 2
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                  Content 2
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Link 3
-                  </button>
-                </h5>
-              </div>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card-body">
-                  Content 3
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
-
-<div id="content1">
-  <div id="accordion">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Content 1
-          </button>
-        </h5>
-      </div>
-
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body">
-          <div class="container-fluid">
-            <div class="row">
-              <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <!-- Your main content goes here -->
-              </main>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Other cards can be added here -->
-  </div>
-</div>
-
-<ul class="nav flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div
-          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Overview</h1>
-          <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with outline buttons">
-            <div class="btn-group me-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                Sales This Month
-              </div>
-              <div class="card-body">
-                <canvas id="salesChart" width="400" height="200"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                Top Products
-              </div>
-              <div class="card-body">
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Product</th>
-                      <th scope="col">Sales</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Product A</td>
-                      <td>100</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Product B</td>
-                      <td>80</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Product C</td>
-                      <td>70</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                Bar Chart
-              </div>
-              <div class="card-body">
-                <canvas id="barChart" class="chart-canvas"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-header">
-                Pie Chart
-              </div>
-              <div class="card-body">
-                <canvas id="pieChart" class="chart-canvas"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Tab 2</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Tab 3</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Tab 4</a>
-  </li>
-</ul>
-
-<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Tab 2 Overview</h1>
-      <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with outline buttons">
-        <div class="btn-group me-2">
-          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Sales This Month
-          </div>
-          <div class="card-body">
-            <canvas id="tab2SalesChart" width="400" height="200"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Top Products
-          </div>
-          <div class="card-body">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Product</th>
-                  <th scope="col">Sales</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Product A</td>
-                  <td>100</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Product B</td>
-                  <td>80</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Product C</td>
-                  <td>70</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Bar Chart
-          </div>
-          <div class="card-body">
-            <canvas id="tab2BarChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            Pie Chart
-          </div>
-          <div class="card-body">
-            <canvas id="tab2PieChart" class="chart-canvas"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-</div>
+<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
