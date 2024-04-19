@@ -141,3 +141,11 @@
         </div>
     </div>
 </footer>
+
+<script>
+    window.onload = function() {
+        var dateTime = document.getElementById("date-time");
+        var now = new Date();
+        dateTime.innerHTML = now.toLocaleDateString() + " " + now.toLocaleTimeString();
+    };
+</script>
