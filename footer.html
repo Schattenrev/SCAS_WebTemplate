@@ -149,3 +149,18 @@
         dateTime.innerHTML = now.toLocaleDateString() + " " + now.toLocaleTimeString();
     };
 </script>
+
+function updateTime() {
+  const timeElement = document.getElementById("currentTime");
+  const now = new Date();
+  const utcTime = now.toUTCString();
+  const internetTime = new Date(utcTime);
+  const formattedTime = internetTime.toLocaleTimeString();
+  timeElement.textContent = formattedTime;
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
+
+// Initial update
+updateTime();
