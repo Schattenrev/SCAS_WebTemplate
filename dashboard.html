@@ -295,3 +295,86 @@ navLinks.forEach((link, index) => {
     <a class="nav-link disabled" href="#">Tab 4</a>
   </li>
 </ul>
+
+<div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Tab 2 Overview</h1>
+      <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with outline buttons">
+        <div class="btn-group me-2">
+          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Sales This Month
+          </div>
+          <div class="card-body">
+            <canvas id="tab2SalesChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Top Products
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Product</th>
+                  <th scope="col">Sales</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Product A</td>
+                  <td>100</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Product B</td>
+                  <td>80</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Product C</td>
+                  <td>70</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Bar Chart
+          </div>
+          <div class="card-body">
+            <canvas id="tab2BarChart" class="chart-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Pie Chart
+          </div>
+          <div class="card-body">
+            <canvas id="tab2PieChart" class="chart-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
