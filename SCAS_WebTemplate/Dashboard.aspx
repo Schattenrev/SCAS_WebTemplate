@@ -6,37 +6,6 @@
 
     <div class="container-fluid">
         <div class="row">
-            <%--<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block vh-100 sidebar collapse Dashboard_Menu">
-                <div class="h-100 d-flex flex-column justify-content-center">
-                    <h5 class="fs-4 text-center">Dashboard</h5>
-                    <ul class="nav nav-pills flex-column mb-auto mt-2">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#home" />
-                                </svg>
-                                Overview
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#table" />
-                                </svg>
-                                Reports
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#gear" />
-                                </svg>
-                                Settings
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>--%>
             <div class="col-md-3 col-lg-2 border border-gray-300 border-start-0 border-top-0 border-bottom-0" id="Dashboard_Menu">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="mt-4">Dashboard</span>
