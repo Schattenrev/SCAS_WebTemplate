@@ -115,6 +115,7 @@
     <Content Include="Media\Images\SELogo.png" />
     <Content Include="Media\Images\SE_Darkmode.png" />
     <Content Include="Media\Images\SE_Lightmode.png" />
+    <Content Include="Media\Images\SU.PA.png" />
     <Content Include="Media\Videos\2.mp4" />
     <Content Include="Media\Videos\3.mp4" />
     <Content Include="Media\Videos\4.mp4" />
@@ -130,7 +131,11 @@
     <Content Include="Scripts\chart.min.js" />
     <Content Include="Signup.aspx" />
     <Content Include="Styles\Style.css" />
+    <Content Include="Styles\Style2.css" />
+    <Content Include="V-Dashboard.aspx" />
+    <Content Include="V-Home.aspx" />
     <Content Include="Web.config" />
+    <Content Include="V-Home2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dashboard.aspx.designer.vb">
@@ -191,6 +196,34 @@
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="V-Dashboard.aspx.designer.vb">
+      <DependentUpon>V-Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="V-Dashboard.aspx.vb">
+      <DependentUpon>V-Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="V-Home.aspx.designer.vb">
+      <DependentUpon>V-Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="V-Home.aspx.vb">
+      <DependentUpon>V-Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Vertical.Master.designer.vb">
+      <DependentUpon>Vertical.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vertical.Master.vb">
+      <DependentUpon>Vertical.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="V-Home2.aspx.designer.vb">
+      <DependentUpon>V-Home2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="V-Home2.aspx.vb">
+      <DependentUpon>V-Home2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -234,6 +267,7 @@
     <Content Include="Scripts\bootstrap.esm.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Vertical.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
