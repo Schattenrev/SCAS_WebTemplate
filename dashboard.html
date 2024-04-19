@@ -60,3 +60,85 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Left Side Tab Example</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Adjust styles as needed */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      padding: 48px 0;
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+    }
+    .nav-link {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#tab1-content" onclick="showTab('tab1-content')">Tab 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tab2-content" onclick="showTab('tab2-content')">Tab 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tab3-content" onclick="showTab('tab3-content')">Tab 3</a>
+          </li>
+          <!-- Add more tabs as needed -->
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div id="tab1-content">
+        <h2>Tab 1 Content</h2>
+        <p>This is where your content for tab 1 goes.</p>
+      </div>
+      <div id="tab2-content" style="display: none;">
+        <h2>Tab 2 Content</h2>
+        <p>This is where your content for tab 2 goes.</p>
+      </div>
+      <div id="tab3-content" style="display: none;">
+        <h2>Tab 3 Content</h2>
+        <p>This is where your content for tab 3 goes.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  function showTab(tabId) {
+    // Hide all tab contents
+    document.querySelectorAll('main > div').forEach(tab => {
+      tab.style.display = 'none';
+    });
+    // Show the selected tab content
+    document.getElementById(tabId).style.display = 'block';
+  }
+</script>
+</body>
+</html>
