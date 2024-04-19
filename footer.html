@@ -164,3 +164,25 @@ setInterval(updateTime, 1000);
 
 // Initial update
 updateTime();
+
+<div id="date-time"></div>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const date = now.toLocaleDateString();
+    const time = now.toTimeString().split(" ")[0]; // Get only the time without the timezone
+    const utcOffset = now.getTimezoneOffset();
+    const utcTime = new Date(now.getTime() - (utcOffset * 60000));
+    const utcZone = utcTime.toUTCString().split(" ")[2];
+
+    const dateTimeElement = document.getElementById("date-time");
+    dateTimeElement.innerHTML = `<p>${date}, ${utcZone}</p><p>${time}</p>`;
+  }
+
+  // Update the time every second
+  setInterval(updateDateTime, 1000);
+
+  // Call the function initially
+  updateDateTime();
+</script>
