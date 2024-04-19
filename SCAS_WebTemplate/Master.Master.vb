@@ -5,4 +5,7 @@
 
     End Sub
 
+    Protected Sub Unnamed1_Click(sender As Object, e As BulletedListEventArgs)
+
+    End Sub
 End Class

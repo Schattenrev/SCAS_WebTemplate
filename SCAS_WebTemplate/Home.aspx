@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="vw-75 mt-3" id="videoCarousel">
+    <div class="vw-75" id="videoCarousel">
         <div id="carouselExampleIndicators"
             class="carousel slide w-100 h-100 d-flex flex-row justify-content-center align-items-center">
             <div class="carousel-indicators">

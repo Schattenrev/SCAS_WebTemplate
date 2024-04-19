@@ -67,6 +67,10 @@
             border-radius: 10px;
         }
 
+        #dynamicFooterInfo{
+            font-size: 12px;
+        }
+
         /*.card {
     background-position: center center;
     background-size: cover;
@@ -146,6 +150,7 @@
 
         #videoCarousel {
             height: 85vh;
+            margin-top: 12vh;
         }
 
         .header-primarycolor {
@@ -163,6 +168,9 @@
             height: 200px;
         }
 
+        #dashboard_wrapper {
+            margin-top: 10vh;
+        }
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -205,6 +213,14 @@
                 <input class="form-check-input" type="checkbox" id="darkModeSwitch">
                 <i class="bi bi-moon"></i>
             </div>
+            <div class="ms-3">
+                <ul style="list-style-type: none; /* remove bullets */
+  padding: 0; /* remove padding */
+  margin: 0; /* remove margins */">
+                    <li>Username</li>
+                    <li>UserID</li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -221,8 +237,9 @@
         </div>
     </footer>--%>
 
-    <footer class="bg-dark text-white fixed-bottom">
+    <footer class="bg-dark text-white">
         <div class="container text-center">
+            <!-- Your existing footer content -->
             <div class="row">
                 <div class="col-12">
                     <p class="fw-lighter mb-1 mt-1">Sample WebTemplate © 2024 - Lorem Ipsum | Philippines</p>
@@ -254,31 +271,17 @@
                 </div>
             </div>
             <div class="row">
-                <span class="fw-lighter SCASLink" id="">All Web Application and Tableau Report reated by the SCAS Team – <a href="https://wsecpwrprd21598.gad.schneider-electric.com/LP.Content.aspx#Home" class="text-light">SCAS Landing Page</a>
+                <span class="fw-lighter SCASLink" id="">All Web Application and Tableau Report created by the SCAS Team – <a href="https://wsecpwrprd21598.gad.schneider-electric.com/LP.Content.aspx#Home" class="text-light">SCAS Landing Page</a>
                 </span>
             </div>
-            <%-- <div class="row ">
-                <div class="col">
-                    <a href="https://www.se.com/ww/en/" class="text-white"><i class="bi bi-link-45deg"></i>Scheneider Electric</a>
-                </div>
-                <div class="col">
-                    <a href="https://spice.se.com/" class="text-white"><i class="bi bi-link-45deg"></i>Spice</a>
-                </div>
-                <div class="col">
-                    <a href="https://schneider-electric.csod.com/" class="text-white"><i class="bi bi-link-45deg"></i>Learning Link</a>
-                </div>
-                <div class="col">
-                    <a href="https://www.yammer.com/schneider-electric.com/" class="text-white"><i class="bi bi-link-45deg"></i>Yammer</a>
-                </div>
-                <div class="col">
-                    <a href="https://www.linkedin.com/company/schneider-electric" class="text-white"><i class="bi bi-link-45deg"></i>LinkedIn</a>
-                </div>
-            </div>--%>
+
+            <!-- New div for dynamic time, date, and time zone -->
+            <div id="dynamicFooterInfo" class="fw-lighter"></div>
         </div>
     </footer>
 
 
-
+   
     <script>
         // Get elements
         const darkModeSwitch = document.getElementById('darkModeSwitch');
@@ -299,7 +302,7 @@
                 body.classList.remove('dark-mode');
                 header.classList.remove('bg-dark');
                 header.classList.add('navbar-light', 'header-primarycolor');
-                dashboard_sm.classList.remove('dark-mode');
+                dashboard_sm.classList.remove('dark-mode', 'text-light');
                 localStorage.setItem('darkMode', 'false');
             }
         }
@@ -327,6 +330,25 @@
                 }
             });
         })
+    </script>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var dynamicFooterInfo = document.getElementById('dynamicFooterInfo');
+
+            var timeString = now.toLocaleTimeString();
+            var dateString = now.toDateString();
+            var timezoneString = now.toString().match(/\(([A-Za-z\s].*)\)/)[1];
+
+            dynamicFooterInfo.innerHTML = "Time: " + timeString + " | Date: " + dateString + " | Time Zone: " + timezoneString;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to display time when the page loads
+        updateTime();
     </script>
 </body>
 </html>

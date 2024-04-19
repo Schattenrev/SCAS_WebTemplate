@@ -131,6 +131,7 @@
 
 #videoCarousel {
     height: 85vh;
+    margin-top: 15vh;
 }
 
 .header-primarycolor {
@@ -152,5 +153,13 @@
 }
 
 .SCASLink {
+    font-size: 12px;
+}
+
+#dashboard_wrapper{
+    margin-top: 10vh;
+}
+
+#dynamicFooterInfo {
     font-size: 12px;
 }
