@@ -1,0 +1,35 @@
+<script>
+    // Get elements
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
+    const body = document.body;
+    const header = document.getElementById('pageHeader');
+    const jumbotron = document.getElementById('jumbotron');
+    const dashboard_sm = document.getElementById('Dashboard_Menu');
+
+    function toggleDarkMode() {
+        if (darkModeSwitch.checked) {
+            body.classList.add('dark-mode');
+            header.classList.remove('header-primarycolor');
+            header.classList.add('bg-dark', 'text-light');
+            dashboard_sm.classList.remove('bg-light');
+            dashboard_sm.classList.add('text-light');
+            localStorage.setItem('darkMode', 'true');
+        } else {
+            body.classList.remove('dark-mode');
+            header.classList.remove('bg-dark');
+            header.classList.add('navbar-light', 'header-primarycolor');
+            dashboard_sm.classList.remove('dark-mode', 'text-light');
+            localStorage.setItem('darkMode', 'false');
+        }
+    }
+
+    window.onload = function () {
+        var darkModePref = localStorage.getItem('darkMode');
+        if (darkModePref === 'true') {
+            darkModeSwitch.checked = true;
+            toggleDarkMode();
+        }
+    };
+
+    darkModeSwitch.addEventListener('change', toggleDarkMode);
+</script>
