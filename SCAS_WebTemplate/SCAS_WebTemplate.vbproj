@@ -121,6 +121,11 @@
     <Content Include="Media\Videos\4.mp4" />
     <Content Include="Media\Videos\5.mp4" />
     <Content Include="Media\Videos\7.mp4" />
+    <Content Include="Photos\EPFQP-Logo2-Final.png" />
+    <Content Include="Photos\EPFQP-Logo2.png" />
+    <Content Include="Photos\EPFQP-Logo3.png" />
+    <Content Include="Photos\EPFQP-Logo4.png" />
+    <Content Include="Photos\Logo1.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -132,8 +137,16 @@
     <Content Include="Signup.aspx" />
     <Content Include="Styles\Style.css" />
     <Content Include="Styles\Style2.css" />
+    <Content Include="Styles\Style3.css" />
     <Content Include="V-Dashboard.aspx" />
     <Content Include="V-Home.aspx" />
+    <Content Include="V2-Dashboard.aspx" />
+    <Content Include="V2-Home.aspx" />
+    <Content Include="Videos\2.mp4" />
+    <Content Include="Videos\3.mp4" />
+    <Content Include="Videos\4.mp4" />
+    <Content Include="Videos\5.mp4" />
+    <Content Include="Videos\7.mp4" />
     <Content Include="Web.config" />
     <Content Include="V-Home2.aspx" />
   </ItemGroup>
@@ -210,6 +223,20 @@
       <DependentUpon>V-Home.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="V2-Dashboard.aspx.designer.vb">
+      <DependentUpon>V2-Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="V2-Dashboard.aspx.vb">
+      <DependentUpon>V2-Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="V2-Home.aspx.designer.vb">
+      <DependentUpon>V2-Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="V2-Home.aspx.vb">
+      <DependentUpon>V2-Home.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Vertical.Master.designer.vb">
       <DependentUpon>Vertical.Master</DependentUpon>
     </Compile>
@@ -223,6 +250,13 @@
     <Compile Include="V-Home2.aspx.vb">
       <DependentUpon>V-Home2.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Vertical2.Master.designer.vb">
+      <DependentUpon>Vertical2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vertical2.Master.vb">
+      <DependentUpon>Vertical2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -268,6 +302,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Vertical.Master" />
+    <Content Include="Vertical2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
