@@ -5,91 +5,98 @@
 <html>
 <head runat="server">
     <title>Vertical Nav-bar</title>
-    <link href="Styles/Style2.css" rel="stylesheet" />
+    <%--<link href="Styles/Style2.css" rel="stylesheet" />--%>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <script src="Scripts/chart.js"></script>
     <script src="Scripts/bootstrap.js"></script>
+
+
+    <style>
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background-color: #333;
+            padding-top: 20px;
+            color: #fff;
+        }
+
+            .sidebar ul.nav li {
+                padding: 10px;
+            }
+
+        /* Content Container Styles */
+        .content-container {
+            margin-left: 250px; /* Same width as sidebar */
+            padding: 20px;
+        }
+    </style>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
 
-    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-            <img src="Media/Images/SU.PA.png" class="bi me-2" width="30" height="24" />
-            <span class="fs-5 fw-semibold">Lorem Ipsum</span>
-        </a>
-        <ul class="list-unstyled ps-0">
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                    Home
-                </button>
-                <div class="collapse show" id="home-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
-                    </ul>
-                </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="V-Home.aspx">Home</a>
             </li>
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                    Dashboard
-                </button>
-                <div class="collapse" id="dashboard-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                        <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                        <li><a href="#" class="link-dark rounded">Annually</a></li>
-                    </ul>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="V-Dashboard.aspx">About</a>
             </li>
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                    Orders
-                </button>
-                <div class="collapse" id="orders-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">New</a></li>
-                        <li><a href="#" class="link-dark rounded">Processed</a></li>
-                        <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                        <li><a href="#" class="link-dark rounded">Returned</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#client-collapse" aria-expanded="false">
-                    Clients
-                </button>
-                <div class="collapse" id="client-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">Customers</a></li>
-                        <li><a href="#" class="link-dark rounded">Suppliers</a></li>
-                        <li><a href="#" class="link-dark rounded">Logistics</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="border-top my-3"></li>
-            <li class="mb-1">
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                    Account
-                </button>
-                <div class="collapse" id="account-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark rounded">New...</a></li>
-                        <li><a href="#" class="link-dark rounded">Profile</a></li>
-                        <li><a href="#" class="link-dark rounded">Settings</a></li>
-                        <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                    </ul>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="Carousel.aspx">Contact</a>
             </li>
         </ul>
     </div>
 
-    <div>
+    <div class="content-container">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
+
+    <footer class="bg-dark text-white mt-auto fixed-bottom">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12">
+                    <p class="fw-lighter mb-0 mt-1">© 2024 Sample WebTemplate - Lorem Ipsum | Philippines</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <hr class="bg-white my-2" />
+                </div>
+            </div>
+            <div class="row">
+                <span class="fw-lighter SCASLink" id="">Created by SCAS Team – <a href="https://wsecpwrprd21598.gad.schneider-electric.com/LP.Content.aspx#Home" class="text-light">SCAS Landing Page</a>
+                </span>
+            </div>
+            <div id="dynamicFooterInfo" class="fw-lighter"></div>
+        </div>
+    </footer>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var dynamicFooterInfo = document.getElementById('dynamicFooterInfo');
+
+            var timeString = now.toLocaleTimeString();
+            var dateString = now.toDateString();
+            var timezoneString = now.toString().match(/\(([A-Za-z\s].*)\)/)[1];
+
+            dynamicFooterInfo.innerHTML = "Time: " + timeString + " | Date: " + dateString + " | Time Zone: " + timezoneString;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to display time when the page loads
+        updateTime();
+    </script>
 </body>
 </html>

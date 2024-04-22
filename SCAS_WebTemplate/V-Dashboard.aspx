@@ -3,135 +3,77 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Website Traffic</h4>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="trafficChart"></canvas>
-                    </div>
-                </div>
+                <canvas id="chart1"></canvas>
             </div>
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Sales</h4>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="salesChart"></canvas>
-                    </div>
-                </div>
+                <canvas id="chart2"></canvas>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>User Growth</h4>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="userGrowthChart"></canvas>
-                    </div>
-                </div>
+                <canvas id="chart3"></canvas>
             </div>
             <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Top Products</h4>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="topProductsChart"></canvas>
-                    </div>
-                </div>
+                <canvas id="chart4"></canvas>
             </div>
         </div>
     </div>
 
     <script>
-        // Website Traffic Chart
-        var trafficChart = document.getElementById('trafficChart').getContext('2d');
-        new Chart(trafficChart, {
-            type: 'line',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Website Visits',
-                    data: [1000, 1500, 2000, 1800, 2500, 3000],
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 335, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
+        // Sample related data for demonstration
+        var data = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Dataset 1',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }, {
+                label: 'Dataset 2',
+                data: [28, 48, 40, 19, 86, 27, 90],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        };
+
+        var options = {
+            scales: {
+                y: {
+                    beginAtZero: true
                 }
             }
-        });
+        };
 
-        // Sales Chart
-        var salesChart = document.getElementById('salesChart').getContext('2d');
-        new Chart(salesChart, {
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+        var chart1 = new Chart(ctx1, {
             type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                datasets: [{
-                    label: 'Sales',
-                    data: [5000, 8000, 10000, 9000, 12000, 15000],
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }
+            data: data,
+            options: options
         });
 
-        // User Growth Chart
-        var userGrowthChart = document.getElementById('userGrowthChart').getContext('2d');
-        new Chart(userGrowthChart, {
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+        var chart2 = new Chart(ctx2, {
+            type: 'line',
+            data: data,
+            options: options
+        });
+
+        var ctx3 = document.getElementById('chart3').getContext('2d');
+        var chart3 = new Chart(ctx3, {
             type: 'pie',
-            data: {
-                labels: ['New Users', 'Returning Users'],
-                datasets: [{
-                    label: 'User Growth',
-                    data: [70, 30],
-                    backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 159, 64, 0.2)'],
-                    borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 159, 64, 1)'],
-                    borderWidth: 1
-                }]
-            }
+            data: data,
+            options: options
         });
 
-        // Top Products Chart
-        var topProductsChart = document.getElementById('topProductsChart').getContext('2d');
-        new Chart(topProductsChart, {
-            type: 'doughnut',
-            data: {
-                labels: ['Product A', 'Product B', 'Product C'],
-                datasets: [{
-                    label: 'Top Products',
-                    data: [40, 30, 30],
-                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-                    borderWidth: 1
-                }]
-            }
+        var ctx4 = document.getElementById('chart4').getContext('2d');
+        var chart4 = new Chart(ctx4, {
+            type: 'radar',
+            data: data,
+            options: options
         });
     </script>
 
