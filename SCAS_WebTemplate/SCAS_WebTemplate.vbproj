@@ -115,7 +115,7 @@
     <Content Include="Media\Images\SELogo.png" />
     <Content Include="Media\Images\SE_Darkmode.png" />
     <Content Include="Media\Images\SE_Lightmode.png" />
-    <Content Include="Media\Images\SU.PA.png" />
+    <Content Include="Photos\SU.PA.png" />
     <Content Include="Media\Videos\2.mp4" />
     <Content Include="Media\Videos\3.mp4" />
     <Content Include="Media\Videos\4.mp4" />
