@@ -60,3 +60,24 @@
         <div id="dynamicFooterInfo" class="fw-lighter"></div>
     </div>
 </footer>
+
+<button class="btn btn-dark d-block d-lg-none" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Move sidebar off the screen by default */
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    padding-top: 20px;
+    color: #fff;
+    transition: left 0.3s; /* Add transition for smooth animation */
+}
+
+<script>
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.left = sidebar.style.left === '0px' ? '-250px' : '0px';
+    });
+</script>
