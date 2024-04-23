@@ -1,0 +1,66 @@
+<style>
+    /* Sidebar Styles */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: #333;
+        padding-top: 20px;
+        color: #fff;
+        transition: all 0.3s ease; /* Add transition for smooth animation */
+    }
+
+    .sidebar ul.nav li {
+        padding: 10px;
+    }
+
+    /* Content Container Styles */
+    .content-container {
+        padding: 20px;
+    }
+
+    /* Adjust margin when sidebar is collapsed */
+    .content-container.collapsed {
+        margin-left: 0;
+    }
+</style>
+
+<!-- Add button to toggle sidebar -->
+<button id="sidebar-toggle">Toggle Sidebar</button>
+
+<div class="sidebar" id="sidebar">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="V-Home.aspx">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="V-Dashboard.aspx">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="Carousel.aspx">Contact</a>
+        </li>
+    </ul>
+</div>
+
+<div class="content-container" id="content-container">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+
+<footer class="bg-dark text-white mt-auto fixed-bottom">
+    <!-- Footer content -->
+</footer>
+
+<script>
+    // JavaScript to handle sidebar toggle
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const contentContainer = document.getElementById('content-container');
+
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        contentContainer.classList.toggle('collapsed');
+    });
+</script>
