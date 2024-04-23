@@ -6,13 +6,12 @@
 <head runat="server">
     <title>Vertical Nav-bar</title>
     <%--<link href="Styles/Style2.css" rel="stylesheet" />--%>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <script src="Scripts/chart.js"></script>
-    <script src="Scripts/bootstrap.bundle.js"></script>
-
 
     <%--<style>
         /* Sidebar Styles */
@@ -49,6 +48,9 @@
             padding: 20px;
         }
     </style>--%>
+
+    <style>
+    </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -122,64 +124,65 @@
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+
                     <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                        <img src="Photos/SU.PA.png" height="30" width="30" class="me-2"/><span class="fs-5 d-none d-sm-inline">Lorem Ipsum</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
                             <a href="V-Home.aspx" class="nav-link align-middle px-0">
-                                <i class="fs-4 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+                                <i class="fs-4 bi-house text-success"></i><span class="ms-1 d-none d-sm-inline text-white">Home</span>
                             </a>
                         </li>
                         <li>
                             <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                                <i class="fs-4 bi-speedometer2 text-success"></i><span class="ms-1 d-none d-sm-inline text-white">Dashboard</span> </a>
                             <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="V-Dashboard.aspx" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> Sample 1 </a>
+                                    <a href="V-Dashboard.aspx" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Item</span> Sample 1 </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> Sample 2 </a>
+                                    <a href="#" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Item</span> Sample 2 </a>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <a href="Survey.aspx" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Survey</span></a>
+                                <i class="fs-4 bi-table text-success"></i><span class="ms-1 d-none d-sm-inline text-white">Survey</span></a>
                         </li>
                         <li>
                             <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                                <i class="fs-4 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                                <i class="fs-4 bi-bootstrap text-success"></i><span class="ms-1 d-none d-sm-inline text-white">Lorem</span></a>
                             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> 1</a>
+                                    <a href="Survey.aspx" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Item</span> 1</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> 2</a>
+                                    <a href="#" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Item</span> 2</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                                <i class="fs-4 bi-grid text-success"></i><span class="ms-1 d-none d-sm-inline text-white">Products</span> </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 1</a>
+                                    <a href="#" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Product</span> 1</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 2</a>
+                                    <a href="#" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Product</span> 2</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 3</a>
+                                    <a href="#" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Product</span> 3</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 4</a>
+                                    <a href="#" class="nav-link px-0 text-white"><span class="d-none d-sm-inline">Product</span> 4</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-people"></i><span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                            <a href="Survey.aspx" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-people text-success"></i><span class="ms-1 d-none d-sm-inline text-white">Customers</span> </a>
                         </li>
                     </ul>
                     <hr>

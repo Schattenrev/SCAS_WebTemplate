@@ -1,97 +1,87 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Vertical.Master" CodeBehind="V-Home.aspx.vb" Inherits="SCAS_WebTemplate.V_Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+    <style>
+        body {
+            background: rgb(0,255,205);
+            background: linear-gradient(90deg, rgba(0,255,205,1) 0%, rgba(211,255,0,1) 100%);
+            font-family: 'tradegothiclt-bold', sans-serif;
+        }
+
+        .center {
+            position: absolute;
+            bottom: 50%;
+        }
+
+        h1 {
+            font-size: 5em;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .animation {
+            border-right: .05em solid;
+            animation: caret 1s steps(1) infinite;
+        }
+
+        @keyframes caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+    </style>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container">
-        <h2>Sample Content Form</h2>
-        <form>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <div class="center">
+        <h1>Inclusion</h1>
     </div>
 
     <script>
-        var currentTab = 0;
-        document.addEventListener("DOMContentLoaded", function (event) {
+        document.addEventListener('DOMContentLoaded', function (event) {
+            // array with texts to type in typewriter
+            var dataText = ["Inclusion", "Mastery", "Purpose", "Action", "Curiosity", "Teamwork"];
 
+            // type one text in the typwriter
+            // keeps calling itself until the text is finished
+            function typeWriter(text, i, fnCallback) {
+                // chekc if text isn't finished yet
+                if (i < (text.length)) {
+                    // add next character to h1
+                    document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span class="animation" aria-hidden="true"></span>';
 
-            showTab(currentTab);
-
-        });
-
-        function showTab(n) {
-            var x = document.getElementsByClassName("tab");
-            x[n].style.display = "block";
-            if (n == 0) {
-                document.getElementById("prevBtn").style.display = "none";
-            } else {
-                document.getElementById("prevBtn").style.display = "inline";
-            }
-            if (n == (x.length - 1)) {
-                document.getElementById("nextBtn").innerHTML = '<i class="fa fa-angle-double-right"></i>';
-            } else {
-                document.getElementById("nextBtn").innerHTML = '<i class="fa fa-angle-double-right"></i>';
-            }
-            fixStepIndicator(n)
-        }
-
-        function nextPrev(n) {
-            var x = document.getElementsByClassName("tab");
-            if (n == 1 && !validateForm()) return false;
-            x[currentTab].style.display = "none";
-            currentTab = currentTab + n;
-            if (currentTab >= x.length) {
-
-                document.getElementById("nextprevious").style.display = "none";
-                document.getElementById("all-steps").style.display = "none";
-                document.getElementById("register").style.display = "none";
-                document.getElementById("text-message").style.display = "block";
-
-
-
-
-            }
-            showTab(currentTab);
-        }
-
-        function validateForm() {
-            var x, y, i, valid = true;
-            x = document.getElementsByClassName("tab");
-            y = x[currentTab].getElementsByTagName("input");
-            for (i = 0; i < y.length; i++) {
-                if (y[i].value == "") {
-                    y[i].className += " invalid";
-                    valid = false;
+                    // wait for a while and call this function again for next character
+                    setTimeout(function () {
+                        typeWriter(text, i + 1, fnCallback)
+                    }, 100);
                 }
-
-
+                // text finished, call callback if there is a callback function
+                else if (typeof fnCallback == 'function') {
+                    // call callback after timeout
+                    setTimeout(fnCallback, 700);
+                }
             }
-            if (valid) {
-                document.getElementsByClassName("step")[currentTab].className += " finish";
+            // start a typewriter animation for a text in the dataText array
+            function StartTextAnimation(i) {
+                if (typeof dataText[i] == 'undefined') {
+                    setTimeout(function () {
+                        StartTextAnimation(0);
+                    }, 20000);
+                }
+                // check if dataText[i] exists
+                if (i < dataText[i].length) {
+                    // text exists! start typewriter animation
+                    typeWriter(dataText[i], 0, function () {
+                        // after callback (and whole text has been animated), start next text
+                        StartTextAnimation(i + 1);
+                    });
+                }
             }
-            return valid;
-        }
-
-        function fixStepIndicator(n) {
-            var i, x = document.getElementsByClassName("step");
-            for (i = 0; i < x.length; i++) {
-                x[i].className = x[i].className.replace(" active", "");
-            }
-            x[n].className += " active";
-        }
+            // start the text animation
+            StartTextAnimation(0);
+        });
     </script>
+
 </asp:Content>
