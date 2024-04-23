@@ -139,6 +139,7 @@
     <Content Include="Styles\Style.css" />
     <Content Include="Styles\Style2.css" />
     <Content Include="Styles\Style3.css" />
+    <Content Include="Survey.aspx" />
     <Content Include="V-Dashboard.aspx" />
     <Content Include="V-Home.aspx" />
     <Content Include="V2-Dashboard.aspx" />
@@ -215,6 +216,13 @@
     </Compile>
     <Compile Include="Signup.aspx.vb">
       <DependentUpon>Signup.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Survey.aspx.designer.vb">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Survey.aspx.vb">
+      <DependentUpon>Survey.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="V-Dashboard.aspx.designer.vb">
