@@ -9,20 +9,28 @@
         background-color: #333;
         padding-top: 20px;
         color: #fff;
+        transition: all 0.3s ease; /* Add transition for smooth animation */
     }
 
-        .sidebar ul.nav li {
-            padding: 10px;
-        }
+    .sidebar ul.nav li {
+        padding: 10px;
+    }
 
     /* Content Container Styles */
     .content-container {
-        margin-left: 250px; /* Same width as sidebar */
         padding: 20px;
+    }
+
+    /* Adjust margin when sidebar is collapsed */
+    .content-container.collapsed {
+        margin-left: 0;
     }
 </style>
 
-<div class="sidebar">
+<!-- Add button to toggle sidebar -->
+<button id="sidebar-toggle">Toggle Sidebar</button>
+
+<div class="sidebar" id="sidebar">
     <ul class="nav flex-column">
         <li class="nav-item">
             <a class="nav-link" href="V-Home.aspx">Home</a>
@@ -36,48 +44,23 @@
     </ul>
 </div>
 
-<div class="content-container">
+<div class="content-container" id="content-container">
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
 </div>
 
 <footer class="bg-dark text-white mt-auto fixed-bottom">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-12">
-                <p class="fw-lighter mb-0 mt-1">© 2024 Sample WebTemplate - Lorem Ipsum | Philippines</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <hr class="bg-white my-2" />
-            </div>
-        </div>
-        <div class="row">
-            <span class="fw-lighter SCASLink" id="">Created by SCAS Team – <a href="https://wsecpwrprd21598.gad.schneider-electric.com/LP.Content.aspx#Home" class="text-light">SCAS Landing Page</a>
-            </span>
-        </div>
-        <div id="dynamicFooterInfo" class="fw-lighter"></div>
-    </div>
+    <!-- Footer content -->
 </footer>
 
-<button class="btn btn-dark d-block d-lg-none" id="sidebarToggle"><i class="fas fa-bars"></i></button>
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Move sidebar off the screen by default */
-    height: 100%;
-    width: 250px;
-    background-color: #333;
-    padding-top: 20px;
-    color: #fff;
-    transition: left 0.3s; /* Add transition for smooth animation */
-}
-
 <script>
-    document.getElementById('sidebarToggle').addEventListener('click', function() {
-        const sidebar = document.querySelector('.sidebar');
-        sidebar.style.left = sidebar.style.left === '0px' ? '-250px' : '0px';
+    // JavaScript to handle sidebar toggle
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const contentContainer = document.getElementById('content-container');
+
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+        contentContainer.classList.toggle('collapsed');
     });
 </script>
