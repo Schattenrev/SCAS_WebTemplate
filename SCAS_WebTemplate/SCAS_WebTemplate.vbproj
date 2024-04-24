@@ -110,12 +110,15 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="Dates.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="EntityTest.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
     <Content Include="Media\Images\SELogo.png" />
     <Content Include="Media\Images\SE_Darkmode.png" />
     <Content Include="Media\Images\SE_Lightmode.png" />
+    <Content Include="Orders.aspx" />
     <Content Include="Photos\SU.PA.png" />
     <Content Include="Media\Videos\2.mp4" />
     <Content Include="Media\Videos\3.mp4" />
@@ -168,11 +171,25 @@
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Dates.aspx.designer.vb">
+      <DependentUpon>Dates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dates.aspx.vb">
+      <DependentUpon>Dates.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.vb">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="EntityTest.aspx.designer.vb">
+      <DependentUpon>EntityTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityTest.aspx.vb">
+      <DependentUpon>EntityTest.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
@@ -211,6 +228,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Orders.aspx.designer.vb">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.aspx.vb">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Product.aspx.designer.vb">
       <DependentUpon>Product.aspx</DependentUpon>
