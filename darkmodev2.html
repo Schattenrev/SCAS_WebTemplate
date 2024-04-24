@@ -98,3 +98,69 @@
   </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light/Dark Mode Switcher</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Default light mode styles */
+    .sidebar {
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+    /* Dark mode styles */
+    .sidebar.dark-mode {
+      background-color: #343a40;
+      color: #f8f9fa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <!-- Sidebar -->
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-light sidebar">
+        <!-- Sidebar Content -->
+        <!-- Your existing sidebar content goes here -->
+        <!-- For brevity, I'm not including the full sidebar content -->
+        <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 min-vh-100">
+          <!-- Your sidebar content here -->
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col py-3">
+        <!-- Your main content goes here -->
+        <!-- For brevity, I'm not including the full main content -->
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Check if dark mode setting is saved in local storage
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
+    var sidebarElement = document.querySelector('.sidebar');
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+      isDarkMode = !isDarkMode;
+      sidebarElement.classList.toggle('dark-mode', isDarkMode);
+      // Save dark mode setting to local storage
+      localStorage.setItem('darkMode', isDarkMode);
+    }
+
+    // Toggle dark mode when the button is clicked
+    document.getElementById('btnDarkmode').addEventListener('click', toggleDarkMode);
+
+    // Apply dark mode setting on page load
+    toggleDarkMode();
+  </script>
+</body>
+</html>
