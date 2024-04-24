@@ -164,3 +164,60 @@
   </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Include your custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Your sidebar content goes here -->
+    <!-- For brevity, I'm not including the full sidebar content -->
+    <ul>
+      <li><a href="page1.html">Page 1</a></li>
+      <li><a href="page2.html">Page 2</a></li>
+      <!-- Add more sidebar links as needed -->
+    </ul>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
+    <!-- The content of each page will be loaded here -->
+    <!-- For example: -->
+    <div id="main-content">
+      <!-- Content from each page will be loaded here dynamically -->
+    </div>
+  </div>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Include your custom JS -->
+  <script>
+    // Check if dark mode setting is saved in local storage
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
+    var bodyElement = document.querySelector('body');
+
+    // Function to toggle dark mode
+    function toggleDarkMode() {
+      isDarkMode = !isDarkMode;
+      bodyElement.classList.toggle('dark-mode', isDarkMode);
+      // Save dark mode setting to local storage
+      localStorage.setItem('darkMode', isDarkMode);
+    }
+
+    // Toggle dark mode when the button is clicked
+    document.getElementById('btnDarkmode').addEventListener('click', toggleDarkMode);
+
+    // Apply dark mode setting on page load
+    toggleDarkMode();
+  </script>
+</body>
+</html>
