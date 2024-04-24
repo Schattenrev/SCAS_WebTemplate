@@ -6,18 +6,17 @@
         body {
             background: rgb(0,255,205);
             background: linear-gradient(90deg, rgba(0,255,205,1) 0%, rgba(211,255,0,1) 100%);
-            font-family: 'tradegothiclt-bold', sans-serif;
         }
 
         .center {
-            position: absolute;
-            bottom: 50%;
+            position: center;
         }
 
-        h1 {
+        .h1home {
             font-size: 5em;
             color: white;
             text-transform: uppercase;
+            font-family: 'tradegothiclt-bold', sans-serif;
         }
 
         .animation {
@@ -36,7 +35,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="center">
-        <h1>Inclusion</h1>
+        <h1 class="animation h1home">Inclusion</h1>
     </div>
 
     <script>

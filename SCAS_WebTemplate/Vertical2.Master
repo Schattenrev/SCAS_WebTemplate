@@ -40,19 +40,19 @@
 
     <div class="container-fluid overflow-hidden">
         <div class="row vh-100 overflow-auto">
-            <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
-                <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
-                    <a href="/" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <img src="Photos/SU.PA.png" width="25" height="25" class="me-1"/><span class="d-none d-sm-inline text-success">Lorem Ipsum</span>
+            <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 d-flex sticky-top sidebar">
+                <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-success">
+                    <a href="V2-Home.aspx" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <img src="Photos/SU.PA.png" width="25" height="25" class="me-1" /><span class="d-none d-sm-inline text-success">Lorem Ipsum</span>
                     </a>
                     <ul class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
-                            <a href="#" class="nav-link px-sm-0 px-2 text-success">
+                            <a href="V2-Home.aspx" class="nav-link px-sm-0 px-2 text-success">
                                 <i class="fs-5 bi bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2 text-success">
+                            <a href="V2-Dashboard.aspx" class="nav-link px-sm-0 px-2 text-success">
                                 <i class="fs-5 bi bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
                         </li>
                         <li>
@@ -74,7 +74,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-sm-0 px-2 text-success">
+                            <a href="Product.aspx" class="nav-link px-sm-0 px-2 text-success">
                                 <i class="fs-5 bi bi-grid"></i><span class="ms-1 d-none d-sm-inline">Products</span></a>
                         </li>
                         <li>
@@ -93,7 +93,8 @@
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                             <li><a class="dropdown-item" href="#">New project...</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <button class="dropdown-item" id="btnDarkmode">Dark-Mode</button></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -109,9 +110,6 @@
                         </asp:ContentPlaceHolder>
                     </div>
                 </main>
-                <footer class="row bg-light py-4 mt-auto">
-                    <div class="col">Footer content here... </div>
-                </footer>
             </div>
         </div>
     </div>
@@ -127,17 +125,23 @@
         crossorigin="anonymous"></script>
 
     <script>
-        var isDarkMode = false;
+        // Check if dark mode setting is saved in local storage
+        var isDarkMode = localStorage.getItem('darkMode') === 'true';
         var sidebarElement = document.querySelector('.sidebar');
 
-        document.getElementById('btnDarkmode').addEventListener('click', function () {
+        // Function to toggle dark mode
+        function toggleDarkMode() {
             isDarkMode = !isDarkMode;
-            if (isDarkMode) {
-                sidebarElement.classList.add('dark-mode');
-            } else {
-                sidebarElement.classList.remove('dark-mode');
-            }
-        });
+            sidebarElement.classList.toggle('dark-mode', isDarkMode);
+            // Save dark mode setting to local storage
+            localStorage.setItem('darkMode', isDarkMode);
+        }
+
+        // Toggle dark mode when the button is clicked
+        document.getElementById('btnDarkmode').addEventListener('click', toggleDarkMode);
+
+        // Apply dark mode setting on page load
+        toggleDarkMode();
     </script>
 
 </body>
