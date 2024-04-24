@@ -3,73 +3,85 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <style>
-        
+        body {
+            background: rgb(0,255,205);
+            background: linear-gradient(90deg, rgba(0,255,205,1) 0%, rgba(211,255,0,1) 100%);
+            font-family: 'tradegothiclt-bold', sans-serif;
+        }
+
+        .center {
+            position: absolute;
+            bottom: 50%;
+        }
+
+        h1 {
+            font-size: 5em;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .animation {
+            border-right: .05em solid;
+            animation: caret 1s steps(1) infinite;
+        }
+
+        @keyframes caret {
+            50% {
+                border-color: transparent;
+            }
+        }
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%--<div class="container">
-        <h1>Welcome to Your Website</h1>
-        <div class="d-flex flex-column">
-            <p>This is the home page content.</p>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Card Title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <p>More content can be added here...</p>
-        </div>
-    </div>--%>
-
-    <div class="container-fluid">
-        <div class="d-flex flex-column">
-            <div>
-                <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-body-tertiary">
-                    <div class="col-md-6 p-lg-5 mx-auto my-5">
-                        <h1 class="display-3 fw-bold">Designed for engineers</h1>
-                        <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
-                        <div class="product-device shadow-sm d-none d-md-block"></div>
-                        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-                    </div>
-                    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-                        <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                            <div class="my-3 py-3">
-                                <h2 class="display-5">Another headline</h2>
-                                <p class="lead">And an even wittier subheading.</p>
-                            </div>
-                            <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-                        </div>
-                        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                            <div class="my-3 p-3">
-                                <h2 class="display-5">Another headline</h2>
-                                <p class="lead">And an even wittier  subheading.</p>
-                            </div>
-                            <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-                        </div>
-                    </div>
-
-                    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-                        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                            <div class="my-3 p-3">
-                                <h2 class="display-5">Another headline</h2>
-                                <p class="lead">And an even wittier subheading.</p>
-                            </div>
-                            <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-                        </div>
-                        <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                            <div class="my-3 py-3">
-                                <h2 class="display-5">Another headline</h2>
-                                <p class="lead">And an even wittier subheading.</p>
-                            </div>
-                            <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="center">
+        <h1>Inclusion</h1>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function (event) {
+            // array with texts to type in typewriter
+            var dataText = ["Inclusion", "Mastery", "Purpose", "Action", "Curiosity", "Teamwork"];
+
+            // type one text in the typwriter
+            // keeps calling itself until the text is finished
+            function typeWriter(text, i, fnCallback) {
+                // chekc if text isn't finished yet
+                if (i < (text.length)) {
+                    // add next character to h1
+                    document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span class="animation" aria-hidden="true"></span>';
+
+                    // wait for a while and call this function again for next character
+                    setTimeout(function () {
+                        typeWriter(text, i + 1, fnCallback)
+                    }, 100);
+                }
+                // text finished, call callback if there is a callback function
+                else if (typeof fnCallback == 'function') {
+                    // call callback after timeout
+                    setTimeout(fnCallback, 700);
+                }
+            }
+            // start a typewriter animation for a text in the dataText array
+            function StartTextAnimation(i) {
+                if (typeof dataText[i] == 'undefined') {
+                    setTimeout(function () {
+                        StartTextAnimation(0);
+                    }, 20000);
+                }
+                // check if dataText[i] exists
+                if (i < dataText[i].length) {
+                    // text exists! start typewriter animation
+                    typeWriter(dataText[i], 0, function () {
+                        // after callback (and whole text has been animated), start next text
+                        StartTextAnimation(i + 1);
+                    });
+                }
+            }
+            // start the text animation
+            StartTextAnimation(0);
+        });
+    </script>
 
 </asp:Content>
